@@ -4,9 +4,9 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Yinka Okunlola — Research Assistant and Academic Writer",
   author: "Yinka Okunlola",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+  "Academic Writer & Researcher based in Lagos, Nigeria. I specialize in biomedical research, academic writing, data analysis, and content creation with expertise in physiology and health sciences.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/yinka-small.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
@@ -76,24 +76,31 @@ experience: [
 ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
+      name: "Blog Writing",
+      summary: "Authored and published articles on various scientific topics, demonstrating expertise in communicating complex ideas.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
+      linkSource: "https://the10xwriter.com.ng",
       image: "/spotifu.png",
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
+      name: "Academic Essay",
+      summary: "Crafting high-quality, well-researched academic essays - with thoroughly researched content, proper citations, and a coherent structure that meets academic standards.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
+      linkSource: "https://the10xwriter.com.ng",
       image: "/shopify-clon.png",
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
+      name: "Thesis/Dessertation",
+      summary: "Producing high-quality research papers from proposal to final manuscript- well-researched content, proper citations, and structured papers to meet academic standards and save you time.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
+      linkSource: "https://the10xwriter.com.ng",
+      image: "/clone-ig.png",
+    },
+      {
+      name: "Data Analysis",
+      summary: "Design questionaires/interviews, collect and analyse data to draw insights that answer research questions. From Microsoft Excel to GraphPad Prism and SPSS, high quality techniques are used to run statistical tests and informative visualization",
+      linkPreview: "/",
+      linkSource: "https://the10xwriter.com.ng",
       image: "/clone-ig.png",
     },
   ],
@@ -101,7 +108,7 @@ experience: [
     description: `
       Hi, I am Yinka Okunlola, a research assistant and academic writer with a master's degree in biomedical science. I have experience in conducting comprehensive research and writing peer-reviewed publications. My passion for research and academic writing drives me to constantly refine my skills to produce high-quality academic output. I focus on providing high-quality academic writing services and delivering exceptional assistance in various academic areas, including research paper writing, essay writing, proofreading/editing and AI reviews. My aim is to cater to the diverse needs of students and professionals seeking academic support. My commitment is to ensure the highest standards of academic excellence in every sentence of writing.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/yinka-big.jpg",
   },
 };
 
