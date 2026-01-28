@@ -28,7 +28,7 @@ export const SITE_CONTENT: SiteContent = {
     name: "Yinka Okunlola",
     specialty: "Research-Driven Writing Strategist",
     summary:
-  "Academic Writer & Researcher based in Lagos, Nigeria. I specialize in biomedical research, academic writing, data analysis, and content creation with expertise in physiology and health sciences.",
+  "I help creators, students, and businesses turn complex ideas into clear, persuasive, and high-performing content—across academic research, blogs, and digital media.",
 email: "yinkaokunlola1@gmail.com",
 },
 experience: [
