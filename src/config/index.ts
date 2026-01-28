@@ -1,7 +1,7 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Yinka Okunlola — Research Assistant and Academic Writer",
+  title: "Yinka Okunlola — Research-Driven Writing Strategist",
   author: "Yinka Okunlola",
   description:
   "Academic Writer & Researcher based in Lagos, Nigeria. I specialize in biomedical research, academic writing, data analysis, and content creation with expertise in physiology and health sciences.",
@@ -26,7 +26,7 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Yinka Okunlola",
-    specialty: "Research Assistant and Academic Writer",
+    specialty: "Research-Driven Writing Strategist",
     summary:
   "Academic Writer & Researcher based in Lagos, Nigeria. I specialize in biomedical research, academic writing, data analysis, and content creation with expertise in physiology and health sciences.",
 email: "yinkaokunlola1@gmail.com",
