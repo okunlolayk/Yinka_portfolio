@@ -106,7 +106,11 @@ experience: [
   ],
   about: {
     description: `
-      Hi, I am Yinka Okunlola, a research assistant and academic writer with a master's degree in biomedical science. I have experience in conducting comprehensive research and writing peer-reviewed publications. My passion for research and academic writing drives me to constantly refine my skills to produce high-quality academic output. I focus on providing high-quality academic writing services and delivering exceptional assistance in various academic areas, including research paper writing, essay writing, proofreading/editing and AI reviews. My aim is to cater to the diverse needs of students and professionals seeking academic support. My commitment is to ensure the highest standards of academic excellence in every sentence of writing.
+      Hi, I'm Yinka Okunlola. I help creators, students, and businesses turn complex ideas into clear, persuasive, and high-performing content. 
+      I’m a research assistant and academic writing specialist with a master’s degree in biomedical science and hands-on experience producing rigorous, publication-ready research and peer-reviewed academic work. My training in scientific research shaped how I think, write, and evaluate information—long before content became a digital commodity. Working deeply with research changed how I view writing.
+      In a world saturated with unrefined information, authority is no longer optional—it’s the differentiator. Clarity, evidence, and structure are what separate content that merely exists from content that influences, ranks, and converts. That’s why I apply research methodologies and evidence-based thinking not only to academic publications, but also to writing designed for visibility, engagement, and monetization. 
+      I work at the intersection of academic rigor and digital performance, helping ideas travel across journals, blogs, newsletters, books, and digital media—without losing credibility or intent. 
+      My commitment is simple: to help you build authority through writing, ensuring every sentence reinforces trust, clarity, and purpose.
     `,
     image: "/yinka-big.jpg",
   },
