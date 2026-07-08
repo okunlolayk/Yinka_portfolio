@@ -1,40 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
-  --font-serif: "Gabarito Variable", ui-serif, serif;
+  /* the10XWriter brand system */
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --color-primary: #2563eb;
-  --color-neutral: #94a3b8;
-  --color-white: #e2e8f0;
-  --color-black: #0e141b;
-
-  --text-xs: 0.875rem;
-  --text-xs--line-height: 1.125rem;
-  --text-sm: 1rem;
-  --text-sm--line-height: 1.25rem;
-  --text-base: 1.125rem;
-  --text-base--line-height: 1.625rem;
-  --text-lg: 1.25rem;
-  --text-lg--line-height: 1.75rem;
-  --text-xl: 1.5rem;
-  --text-xl--line-height: 1.813rem;
-  --text-2xl: 1.75rem;
-  --text-2xl--line-height: 2.125rem;
-  --text-3xl: 2rem;
-  --text-3xl--line-height: 2.375rem;
-  --text-4xl: 2.25rem;
-  --text-4xl--line-height: 2.688rem;
-  --text-5xl: 2.5rem;
-  --text-5xl--line-height: 3rem;
-  --text-6xl: 3rem;
-  --text-6xl--line-height: 3.625rem;
-  --text-7xl: 3.75rem;
-  --text-7xl--line-height: 1;
-  --text-8xl: 4.5rem;
-  --text-8xl--line-height: 4.875rem;
-  --text-9xl: 6rem;
-  --text-9xl--line-height: 6.625rem;
+  --color-paper: #EDEAE1;
+  --color-paper-alt: #F6F4EE;
+  --color-ink: #14120F;
+  --color-ink-soft: #45403A;
+  --color-signal: #FF6B00;
+  --color-signal-dim: #C4560A;
+  --color-pen: #3654C9;
 
   --tracking-tightest: -2px;
   --tracking-tighter: -1px;
@@ -50,4 +28,21 @@
       transform: translateY(0);
     }
   }
+}
+
+/* the10XWriter — break a section out of a centered container to full viewport width */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* the10XWriter — [[wiki-link]] style tag, brand signature */
+.wiki-tag::before {
+  content: "[[";
+  opacity: 0.5;
+}
+.wiki-tag::after {
+  content: "]]";
+  opacity: 0.5;
 }

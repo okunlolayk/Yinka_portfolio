@@ -9,54 +9,64 @@ const { siteLogo, navLinks } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6"
+  class="sticky top-0 z-50 animate-slide-in border-b border-white/10 bg-ink/90 backdrop-blur-md"
 >
-  <a href="/" aria-label="Home link">
-    <Image
-      class="rounded-full"
-      src={siteLogo}
-      width="45"
-      height="45"
-      alt="website logo"
-    />
-  </a>
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+    <a
+      href="/"
+      aria-label="Home link"
+      class="flex items-center gap-2.5 font-mono text-[15px] font-semibold text-paper-alt"
+    >
+      <Image class="rounded-full" src={siteLogo} width="34" height="34" alt="website logo" />
+      <span class="hidden sm:inline">Yinka Okunlola</span>
+    </a>
 
-  <button
-    type="button"
-    id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <Menu />
-  </button>
+    <button
+      type="button"
+      id="menu-button"
+      class="px-1.5 text-paper-alt/70 sm:hidden"
+      aria-expanded="false"
+      aria-controls="main-menu"
+    >
+      <Menu />
+    </button>
 
-  <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
-    id="main-menu"
-  >
-    <ul class="gap-2 sm:flex">
-      {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
-              href={link.href}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <nav
+      class="absolute top-16 right-5 hidden rounded-sm border border-white/10 bg-ink px-4 py-5 text-paper-alt sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
+      id="main-menu"
+    >
+      <ul class="gap-6 sm:flex sm:items-center">
+        {
+          navLinks.map((link) => (
+            <li class="relative">
+              <a
+                class="nav-item wiki-tag relative block p-2 font-mono text-sm text-paper-alt/70 transition-all duration-300 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-signal after:opacity-0 after:content-['•'] hover:text-signal"
+                href={link.href}
+              >
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href="https://the10xwriter.com.ng"
+            target="_blank"
+            class="inline-flex items-center gap-2 rounded-sm bg-signal px-4 py-2 font-mono text-[13px] font-semibold text-ink transition-transform hover:-translate-y-px"
+          >
+            Visit the Journal →
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>
   // Toggle mobile menu
   const button = document.querySelector("#menu-button");
   const menu = document.querySelector("#main-menu");
-  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+  const navItems = document.querySelectorAll("#main-menu > ul > li > a.nav-item");
 
   const toggleMenu = () => {
     menu?.classList.toggle("hidden");
@@ -76,9 +86,9 @@ const { siteLogo, navLinks } = Astro.props;
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
+              item.classList.add("text-signal", "md:after:opacity-100");
             } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
+              item.classList.remove("text-signal", "md:after:opacity-100");
             }
           });
         }
@@ -87,7 +97,7 @@ const { siteLogo, navLinks } = Astro.props;
     { threshold: 0.5 },
   );
 
-  document.querySelectorAll("section").forEach((section) => {
+  document.querySelectorAll("section[id]").forEach((section) => {
     observer.observe(section);
   });
 
@@ -96,7 +106,7 @@ const { siteLogo, navLinks } = Astro.props;
     if (document.visibilityState === "hidden") {
       observer.disconnect();
     } else {
-      document.querySelectorAll("section").forEach((section) => {
+      document.querySelectorAll("section[id]").forEach((section) => {
         observer.observe(section);
       });
     }

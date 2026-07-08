@@ -5,23 +5,33 @@ type Props = HeroProps;
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
-  >
-    {name}
-  </h1>
-  <p
-    class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
-  </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
-    {summary}
-  </p>
+<section
+  class="full-bleed flex min-h-[92vh] items-center bg-ink py-24"
+  id="hero"
+>
+  <div class="mx-auto w-full max-w-5xl px-5">
+    <span
+      class="wiki-tag mb-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.12em] text-pen uppercase"
+    >
+      Research-driven writing
+    </span>
+    <h1
+      class="mb-3 max-w-3xl font-serif text-5xl leading-[1.04] font-semibold text-paper-alt sm:text-6xl md:text-7xl"
+    >
+      {name}
+    </h1>
+    <p
+      class="mb-8 font-serif text-2xl leading-tight font-medium text-signal italic sm:text-3xl md:text-4xl"
+    >
+      {specialty}
+    </p>
+    <p class="mb-10 max-w-xl text-base leading-relaxed text-paper-alt/70 md:text-lg">
+      {summary}
+    </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+    <a
+      class="inline-flex items-center gap-2 rounded-full bg-signal px-8 py-4 font-mono text-sm font-semibold text-ink transition-transform hover:-translate-y-px"
+      href={`mailto:${email}`}>Get in Touch →</a
+    >
+  </div>
 </section>

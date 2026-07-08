@@ -5,29 +5,61 @@ type Props = Pick<SiteConfig, "author" | "socialLinks">;
 
 const { author, socialLinks } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+const iconFor = (text: string) => text.trim().toLowerCase();
 ---
 
-<footer
-  class="w-full border-t border-neutral/20 px-5 pt-5 pb-8 text-center text-white"
->
-  <ul class="mb-5 flex flex-wrap justify-center gap-x-5 text-xs">
-    {
-      socialLinks.map(({ text, href }) => (
-        <li>
-          <a
-            href={href}
-            target="_blank"
-            class="inline-block px-4 py-3 after:relative after:bottom-[-4px] after:content-[url(/external.svg)] hover:text-primary"
-          >
-            {text}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <p class="text-xs">
-    {author} © {currentYear}. <span class="text-neutral"
-      >Designed & Developed by</span
-    > Moisés Machuca
-  </p>
+<footer class="full-bleed border-t border-white/10 bg-ink px-5 pt-10 pb-8 text-paper-alt">
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-6">
+    <span class="font-mono text-[15px] font-semibold text-paper-alt">{author}</span>
+
+    <ul class="flex flex-wrap gap-3">
+      {
+        socialLinks.map(({ text, href }) => (
+          <li>
+            <a
+              href={href}
+              target="_blank"
+              aria-label={text}
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-paper-alt/70 transition-colors hover:border-signal hover:bg-signal/10 hover:text-signal"
+            >
+              {iconFor(text) === "x" && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                  <path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6Zm-1.2 18h1.7L6.4 3.9H4.6Z" />
+                </svg>
+              )}
+              {iconFor(text) === "linkedin" && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                  <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.98 9.5h4v12h-4Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.25h-4v-5.54c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.64h-4Z" />
+                </svg>
+              )}
+              {iconFor(text) === "github" && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+                </svg>
+              )}
+              {iconFor(text) === "youtube" && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12Z" />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div
+    class="mx-auto mt-8 flex max-w-5xl flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-5 font-mono text-[11px] text-paper-alt/40"
+  >
+    <span>© {author} {currentYear}. Research like a team. Write like one person.</span>
+    <a
+      href="https://github.com/immois/astro-zen"
+      target="_blank"
+      class="text-paper-alt/40 hover:text-signal"
+    >
+      Built on Astro Zen
+    </a>
+  </div>
 </footer>

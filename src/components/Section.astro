@@ -2,16 +2,26 @@
 interface Props {
   text: string;
   href: string;
+  eyebrow?: string;
+  tone?: "paper" | "paper-alt";
 }
 
-const { text, href } = Astro.props;
+const { text, href, eyebrow, tone = "paper" } = Astro.props;
+const bg = tone === "paper-alt" ? "bg-paper-alt" : "bg-paper";
 ---
 
-<section id={href} class="py-24">
-  <h2
-    class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl"
-  >
-    {text}
-  </h2>
-  <slot />
+<section id={href} class={`full-bleed ${bg} py-20 md:py-24`}>
+  <div class="mx-auto max-w-5xl px-5">
+    {
+      eyebrow && (
+        <span class="wiki-tag mb-4 inline-flex items-center gap-2 font-mono text-xs tracking-[0.12em] text-pen uppercase">
+          {eyebrow}
+        </span>
+      )
+    }
+    <h2 class="mb-12 font-serif text-4xl leading-[1.1] font-semibold text-ink md:text-5xl">
+      {text}
+    </h2>
+    <slot />
+  </div>
 </section>
